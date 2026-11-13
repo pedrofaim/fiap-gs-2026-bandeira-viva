@@ -1,0 +1,93 @@
+{
+  "pergunta": "A próxima coleta semanal do ponto vai passar de 100 UFC/100 mL de enterococos?",
+  "dados": "CETESB, resultados semanais de enterococos, 37 pontos da Baixada Santista central, 2012-2021",
+  "modelo_escolhido": "Random Forest",
+  "hiperparametros": {
+    "max_depth": 4,
+    "min_samples_leaf": 10,
+    "n_estimators": 200
+  },
+  "combinacoes_testadas": {
+    "random_forest": 18,
+    "xgboost": 12
+  },
+  "limiares_por_municipio": {
+    "SÃO VICENTE": 0.5021,
+    "SANTOS": 0.3943,
+    "PRAIA GRANDE": 0.4029,
+    "GUARUJÁ": 0.3287
+  },
+  "treino": {
+    "acurácia": 0.4733,
+    "acurácia balanceada": 0.6168,
+    "precisão": 0.2945,
+    "recall": 0.8879,
+    "F1": 0.4423,
+    "ROC-AUC": 0.741,
+    "PR-AUC": 0.4898
+  },
+  "validacao_oof": {
+    "acurácia": 0.4838,
+    "acurácia balanceada": 0.5781,
+    "precisão": 0.2706,
+    "recall": 0.7509,
+    "F1": 0.3978,
+    "ROC-AUC": 0.6749,
+    "PR-AUC": 0.4093
+  },
+  "teste": {
+    "acurácia": 0.4523,
+    "acurácia balanceada": 0.5825,
+    "precisão": 0.2815,
+    "recall": 0.8319,
+    "F1": 0.4206,
+    "ROC-AUC": 0.6684,
+    "PR-AUC": 0.415
+  },
+  "baselines_teste": {
+    "Persistência": {
+      "acurácia": 0.6617,
+      "acurácia balanceada": 0.541,
+      "precisão": 0.2993,
+      "recall": 0.3096,
+      "F1": 0.3044
+    },
+    "Regra CETESB (2 de 5 ou >400)": {
+      "acurácia": 0.6111,
+      "acurácia balanceada": 0.5584,
+      "precisão": 0.2967,
+      "recall": 0.4574,
+      "F1": 0.3599
+    }
+  },
+  "sao_vicente_teste": {
+    "São Vicente (teste)": {
+      "acurácia": 0.5582,
+      "acurácia balanceada": 0.5932,
+      "precisão": 0.4118,
+      "recall": 0.7023,
+      "F1": 0.5191,
+      "ROC-AUC": 0.639,
+      "PR-AUC": 0.4321
+    },
+    "Regra CETESB em São Vicente": {
+      "acurácia": 0.5429,
+      "acurácia balanceada": 0.5659,
+      "precisão": 0.3932,
+      "recall": 0.6375,
+      "F1": 0.4864,
+      "ROC-AUC": null,
+      "PR-AUC": null
+    }
+  },
+  "confusao_teste": {
+    "verdadeiro_negativo": 1356,
+    "falso_positivo": 2716,
+    "falso_negativo": 215,
+    "verdadeiro_positivo": 1064
+  },
+  "exemplos": {
+    "treino": 10692,
+    "teste": 5351
+  }
+}
